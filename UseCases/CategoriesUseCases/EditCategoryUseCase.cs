@@ -7,22 +7,20 @@ using System.Threading.Tasks;
 using UseCases.DataStorePluginInterfaces;
 using UseCases.UseCaseInterfaces;
 
-namespace UseCases
+namespace UseCases.CategoriesUseCases
 {
-    public class AddCategoryUseCase : IAddCategoryUseCase
+    public class EditCategoryUseCase : IEditCategoryUseCase
     {
         private readonly ICategoryRepository _categoryRepository;
 
-        public AddCategoryUseCase(ICategoryRepository categoryRepository)
+        public EditCategoryUseCase(ICategoryRepository categoryRepository)
         {
             _categoryRepository = categoryRepository;
         }
 
         public void Execute(Category category)
         {
-            _categoryRepository.AddCategory(category);
+            _categoryRepository.UpdateCategory(category);
         }
-
-
     }
 }

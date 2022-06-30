@@ -1,4 +1,4 @@
-﻿@page "/editcategory"
+﻿@page "/editcategory/{categoryId}"
 
 
 @inject NavigationManager NavigationManager
@@ -20,12 +20,12 @@
         </div>
 
         <div class="form-group">
-            <label for="name">Description</label>
-            <InputText id="name" @bind-Value="category.Description" class="form-control"></InputText>
+            <label for="description">Description</label>
+            <InputText id="description" @bind-Value="category.Description" class="form-control"></InputText>
         </div>
 
 
-        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="submit" class="btn btn-primary" @onclick="OnValidSubmit">Save</button>
         
         <button type="button" class="btn btn-primary" @onclick="OnCancel">Cancel</button>
 
@@ -37,9 +37,9 @@
 
 
 @code {
+
     [Parameter]
     public string CategoryId { get; set; } = string.Empty;
-
 
     private Category category = new Category();
 
@@ -54,16 +54,13 @@
     {
         base.OnParametersSet();
 
-        if (int.TryParse(this.CategoryId, out int iCategoryId))
+        if (int.TryParse(CategoryId, out int iCategoryId))
         {
             var cat = GetCategoryByIdUseCase.Execute(iCategoryId);
-            var cloneCat = new Category { CategoryId = cat.CategoryId, Name = cat.Name, Description = cat.Description };
+            this.category = new Category { CategoryId = cat.CategoryId, Name = cat.Name, Description = cat.Description };
 
         }
-
     }
-
-
 
     private void OnValidSubmit()
     {
