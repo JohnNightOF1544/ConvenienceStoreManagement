@@ -2,7 +2,7 @@
 
 namespace UseCases.UseCaseInterfaces
 {
-    public interface IViewProductsUseCases
+    public interface IViewProductsUseCase
     {
         IEnumerable<Product> Execute();
     }

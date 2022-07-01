@@ -9,11 +9,11 @@ using UseCases.UseCaseInterfaces;
 
 namespace UseCases
 {
-    public class ViewProductsUseCases : IViewProductsUseCases
+    public class ViewProductsUseCase : IViewProductsUseCase
     {
         private readonly IProductRepository _productRepository;
 
-        public ViewProductsUseCases(IProductRepository productRepository)
+        public ViewProductsUseCase(IProductRepository productRepository)
         {
             _productRepository = productRepository;
         }
