@@ -53,7 +53,7 @@
 @code {
 
     private Product product = new Product();
-    private IEnumerable<Category>? categories;
+    private List<Category> categories = new List<Category>();
 
 
     protected override void OnInitialized()
@@ -61,7 +61,7 @@
         base.OnInitialized();
 
         product = new Product();
-        categories = ViewCategoriesUseCase.Execute();
+        categories = ViewCategoriesUseCase.Execute().ToList();
     }
 
     private void OnValidSubmit()
@@ -74,5 +74,4 @@
     {
         NavigationManager.NavigateTo("/products");
     }
-    //<InputText id="description" @bind-Value="GetCategoryByIdUseCase.Execute(product.CategoryId)" class="form-control"></InputText>
 }

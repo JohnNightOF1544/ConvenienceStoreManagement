@@ -1,6 +1,6 @@
-﻿using DataAccessLibrary;
+﻿using CoreBusiness;
 
-namespace UseCases.UseCaseInterfaces
+namespace UseCases.UseCaseInterfaces.CategoriesInterfaces
 {
     public interface IAddCategoryUseCase
     {

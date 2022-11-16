@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace DataAccessLibrary
+namespace CoreBusiness
 {
     public class Category
     {
@@ -10,7 +10,5 @@ namespace DataAccessLibrary
         public string Name { get; set; } = null!;
 
         public string Description { get; set; } = null!;
-
-
     }
 }

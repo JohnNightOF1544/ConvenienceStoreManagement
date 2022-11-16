@@ -1,4 +1,4 @@
-﻿namespace UseCases.UseCaseInterfaces
+﻿namespace UseCases.UseCaseInterfaces.CategoriesInterfaces
 {
     public interface IDeleteCategoryUseCase
     {

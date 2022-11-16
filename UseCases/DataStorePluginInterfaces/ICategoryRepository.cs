@@ -1,4 +1,4 @@
-﻿using DataAccessLibrary;
+﻿using CoreBusiness;
 
 namespace UseCases.DataStorePluginInterfaces
 {

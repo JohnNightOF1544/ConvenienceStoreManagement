@@ -1,11 +1,11 @@
-﻿using DataAccessLibrary;
+﻿using CoreBusiness;
 using UseCases.DataStorePluginInterfaces;
 
 namespace Plugins.DataStore.InMemory
 {
     public class CategoryInMemoryRepository : ICategoryRepository
     {
-        private List<Category> _categories;
+        private readonly List<Category> _categories = new List<Category>();
         public CategoryInMemoryRepository()
         {
             _categories = new List<Category>()
@@ -20,17 +20,19 @@ namespace Plugins.DataStore.InMemory
         {
             if (_categories.Any(x => x.Name.Equals(category.Name, StringComparison.OrdinalIgnoreCase))) return;
 
-            if (_categories != null && _categories.Count > 0)
+            if (_categories is not null && _categories.Count > 0)
             {
                 var maxId = _categories.Max(x => x.CategoryId);
-                category.CategoryId = maxId + 1;
+                category.CategoryId = maxId + 1;    
             }
-            else
+
+            if (_categories is null)
             {
                 category.CategoryId = 1;
             }
 
             _categories.Add(category);
+
         }
 
         public void UpdateCategory(Category category)
@@ -50,17 +52,13 @@ namespace Plugins.DataStore.InMemory
 
         public Category GetCategoryById(int categoryId)
         {
-
-            return _categories.First(x => x.CategoryId == categoryId);
+            
+            return _categories.FirstOrDefault(x => x.CategoryId == categoryId);
         }
 
         public void DeleteCategory(int categoryId)
         {
             _categories.Remove(GetCategoryById(categoryId));
         }
-
-
-
-
     }
 }

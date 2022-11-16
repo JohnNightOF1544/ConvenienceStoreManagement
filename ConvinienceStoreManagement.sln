@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppUI", "WebAppUI\WebApp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UseCases", "UseCases\UseCases.csproj", "{93EB7AE0-9D9C-4BD7-9581-FACFB05B1618}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLibrary", "DataAccessLibrary\DataAccessLibrary.csproj", "{3D2885EC-7F5B-4269-BAF8-5E38083D6367}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreBusiness", "DataAccessLibrary\CoreBusiness.csproj", "{3D2885EC-7F5B-4269-BAF8-5E38083D6367}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Plugins.DataStore.InMemory", "Plugins.DataStore.InMemory\Plugins.DataStore.InMemory.csproj", "{4653D641-7823-42B1-B045-B6B4894CB166}"
 EndProject

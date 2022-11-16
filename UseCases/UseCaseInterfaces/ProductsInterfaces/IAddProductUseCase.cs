@@ -1,6 +1,6 @@
-﻿using DataAccessLibrary;
+﻿using CoreBusiness;
 
-namespace UseCases.UseCaseInterfaces
+namespace UseCases.UseCaseInterfaces.ProductsInterfaces
 {
     public interface IAddProductUseCase
     {
